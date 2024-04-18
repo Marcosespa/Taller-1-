@@ -1,23 +1,20 @@
 import { Serie } from './serie.js';
 import { seriesD } from './data.js';
 
-const seriesTbody: HTMLElement = document.getElementById('seriesDatos')!; 
+const seriesbody: HTMLElement = document.getElementById('seriesDatos')!; 
 const avgSeasons: HTMLElement = document.getElementById("promedioTempordas")!;
 
 avgSeasons.innerHTML = `${promTempo(seriesD)}`
-renderSeriesInTable(seriesD)
+SeriesInTable(seriesD)
 
-function renderSeriesInTable(series: Serie[]): void {
+function SeriesInTable(series: Serie[]): void {
   series.forEach(c => {
     let trElement = document.createElement("tr");
     trElement.innerHTML = `<td>${c.id}</td>
                            <td><a class="btn" href="#" role="button" id="btn-${c.link}">${c.nombre}</a></td>
                            <td>${c.plataforma}</td>
-                           <td>${c.temporadas}</td>
-                           
-                           `
-                           
-    seriesTbody.appendChild(trElement);
+                           <td>${c.temporadas}</td>`
+                           seriesbody.appendChild(trElement);
     })};
 
 
