@@ -8,12 +8,12 @@ avgSeasons.innerHTML = `${promTempo(seriesD)}`
 SeriesInTable(seriesD)
 
 function SeriesInTable(series: Serie[]): void {
-  series.forEach(c => {
+  series.forEach(serie => {
     let trElement = document.createElement("tr");
-    trElement.innerHTML = `<td>${c.id}</td>
-                           <td><a class="btn" href="#" role="button" id="btn-${c.link}">${c.nombre}</a></td>
-                           <td>${c.plataforma}</td>
-                           <td>${c.temporadas}</td>`
+    trElement.innerHTML = `<td>${serie.id}</td>
+                           <td><a class="btn" href="#" role="button" id="btn-${serie.link}">${serie.nombre}</a></td>
+                           <td>${serie.plataforma}</td>
+                           <td>${serie.temporadas}</td>`
                            seriesbody.appendChild(trElement);
     })};
 
